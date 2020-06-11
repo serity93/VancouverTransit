@@ -1,22 +1,33 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import MapView from 'react-native-maps';
+import { StyleSheet } from 'react-native';
 
 const App = () => {
+  const VANCOUVER_LATITUDE = 49.28273;
+  const VANCOUVER_LONGITUDE = -123.120735;
+  const LATITUDE_DELTA = 0.0922;
+  const LONGITUDE_DELTA = LATITUDE_DELTA * (9.0 / 20.0);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello world!</Text>
-    </View>
+    <MapView
+      style={styles.map}
+      region={{
+        latitude: VANCOUVER_LATITUDE,
+        longitude: VANCOUVER_LONGITUDE,
+        latitudeDelta: LATITUDE_DELTA,
+        longitudeDelta: LONGITUDE_DELTA,
+      }}
+    />
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 20,
-    textAlign: 'center',
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 });
 
