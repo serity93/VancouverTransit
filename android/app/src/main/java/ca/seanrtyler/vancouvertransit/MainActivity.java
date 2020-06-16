@@ -1,4 +1,4 @@
-package com.vancouvertransit;
+package ca.seanrtyler.vancouvertransit;
 
 import com.facebook.react.ReactActivity;
 
